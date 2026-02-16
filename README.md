@@ -29,7 +29,15 @@
 </p>
 
 <p align="center">
-  Supervisor: Anastasios Tsolakidis, Assistant Professor<br>
+  Supervisor: Periklis Andritsos, Professor
+</p>
+<p align="center">
+  <a href="https://ice.uniwa.gr/en/emd_person/periklis-andritsos/" target="_blank">UNIWA Profile</a> ·
+  <a href="https://www.linkedin.com/in/periklisandritsos/" target="_blank">LinkedIn</a>
+</p>
+
+<p align="center">
+  Co-supervisor: Anastasios Tsolakidis, Assistant Professor<br>
 </p>
 
 <p align="center">
