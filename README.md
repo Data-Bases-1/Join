@@ -8,6 +8,11 @@
   DEPARTMENT OF COMPUTER ENGINEERING AND INFORMATICS
 </p>
 
+<p align="center">
+  <a href="https://www.uniwa.gr" target="_blank">University of West Attica</a> ·
+  <a href="https://ice.uniwa.gr" target="_blank">Department of Computer Engineering and Informatics</a>
+</p>
+
 ---
 
 <p align="center">
@@ -28,6 +33,12 @@
   <a href="https://www.linkedin.com/in/vasilis-athanasiou-7036b53a4/" target="_blank">LinkedIn</a>
 </p>
 
+<hr>
+
+<p align="center">
+  <strong>Supervision</strong>
+</p>
+
 <p align="center">
   Supervisor: Periklis Andritsos, Professor
 </p>
@@ -45,13 +56,25 @@
   <a href="https://www.linkedin.com/in/tasos-tsolakidis-35493930/" target="_blank">LinkedIn</a>
 </p>
 
+</hr>
+
+---
+
 <p align="center">
   Athens, June 2023
 </p>
 
 ---
 
-# Project Overview
+<p align="center">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnmdUOpxbVHjMmT1NOR5rpdDHOKK88HsRf6Q&s" width="250"/>
+</p>
+
+---
+
+# README
+
+## Classification and Suggestions - GROUP BY, AND, HAVING, JOIN
 
 The objective of this task is to strengthen practical skills in **SQL querying**, focusing on data classification, aggregation, and relational joins using a structured personnel database.
 
@@ -59,21 +82,20 @@ The objective of this task is to strengthen practical skills in **SQL querying**
 
 ## Table of Contents
 
-
-| Section | Folder / File | Description |
-|------:|---------------|-------------|
-| 1 | `assign/` | Assignment material |
-| 1.1 | `assign/assignment_03.pdf` | Assignment description (English) |
-| 1.2 | `assign/εργασία_03.pdf` | Assignment description (Greek) |
-| 2 | `docs/` | Theoretical documentation |
-| 2.1 | `docs/Classification-Join-Tables.pdf` | Table classification and JOIN operations (English) |
-| 2.2 | `docs/Ταξινόμηση-Join-Συνδέσεις.pdf` | Table classification and JOIN operations (Greek) |
-| 3 | `README.md` | Repository overview and instructions |
+| Section | Folder / File                         | Description                                        |
+| ------: | ------------------------------------- | -------------------------------------------------- |
+|       1 | `assign/`                             | Assignment material                                |
+|     1.1 | `assign/assignment_03.pdf`            | Assignment description (English)                   |
+|     1.2 | `assign/εργασία_03.pdf`               | Assignment description (Greek)                     |
+|       2 | `docs/`                               | Theoretical documentation                          |
+|     2.1 | `docs/Classification-Join-Tables.pdf` | Table classification and JOIN operations (English) |
+|     2.2 | `docs/Ταξινόμηση-Join-Συνδέσεις.pdf`  | Table classification and JOIN operations (Greek)   |
+|       3 | `README.md`                           | Project documentation                              |
+|       4 | `INSTALL.md`                          | Usage instructions                                 |
 
 ---
 
-
-## Database Schema
+## 1. Database Schema
 
 The project utilizes a database named **`new_personnel`**, which consists of four primary tables:
 
@@ -91,11 +113,12 @@ The project utilizes a database named **`new_personnel`**, which consists of fou
 
 ---
 
-## Key SQL Operations Included
+## 2. Key SQL Operations Included
 
 The assignment covers a wide range of essential SQL functionalities:
 
-### Data Selection & Sorting
+### 2.1 Data Selection & Sorting
+
 - Use of `ORDER BY` to organize employee lists based on:
   - Commission
   - Job position
@@ -103,14 +126,16 @@ The assignment covers a wide range of essential SQL functionalities:
 
 ---
 
-### Aggregation
+## 3. Aggregation
+
 - Application of `GROUP BY` and `HAVING` to:
   - Calculate average salaries per department
   - Filter results based on employee count conditions
 
 ---
 
-### Date Functions
+## 4. Date Functions
+
 - Calculation of employee service years using:
   - `DATEDIFF`
   - `FORMAT`
@@ -118,7 +143,7 @@ The assignment covers a wide range of essential SQL functionalities:
 
 ---
 
-### Table Joins
+## 5. Table Joins
 
 - **Equi-Joins**  
   Linking employees to their respective departments and projects.
@@ -131,135 +156,13 @@ The assignment covers a wide range of essential SQL functionalities:
 
 ---
 
-## Sample Result Set
+## 6. Sample Result Set
 
 As an example, the self-join operation that maps employees to their managers produces the following structure:
 
-| Department   | Manager  | Employee |
-|-------------|----------|----------|
-| ACCOUNTING  | ELMASRI  | CODD     |
-| ACCOUNTING  | ELMASRI  | DATE     |
-| ACCOUNTING  | ELMASRI  | ELMASRI  |
-| SALES       | NAVATHE  | NAVATHE  |
-
----
-
-# Installation & Setup Guide
-
-This guide describes how to install, initialize, and verify the database environment required to execute the laboratory tasks.  
-You will need a **Relational Database Management System (RDBMS)** that supports SQL, such as **MySQL** or **MariaDB**.
-
----
-
-## Prerequisites
-
-Before using this project, ensure you have the following installed:
-
-### 1. Database Management System (DBMS)
-- **MySQL** (recommended)
-- Compatible alternatives:
-  - MariaDB
-  - PostgreSQL *(minor syntax adjustments may be required)*
-
-### 2. SQL Client / Interface
-Any SQL client capable of executing `.sql` scripts:
-- MySQL Workbench *(recommended)*
-- phpMyAdmin
-- DBeaver
-- Command-line MySQL client
-
-Make sure your SQL client is properly connected to your database server.
-
----
-
-## Installation
-
-### 1. Clone the Repository
-
-Open a terminal/command prompt and run:
-
-```bash
-git clone https://github.com/Data-Bases-1/Join.git
-```
-
-#### Alternative (Without Git)
-
-- Open the repository URL in your browser
-- Click Code → Download ZIP
-- Extract the ZIP file to a local directory
-
----
-
-## 1. Database Initialization
-
-First, remove any existing version of the database to avoid conflicts. Then create and select the new database.
-
-```sql
-DROP DATABASE IF EXISTS new_personnel;
-CREATE DATABASE IF NOT EXISTS new_personnel;
-USE new_personnel;
-```
-
-## 2. Table Creation
-Tables must be created in a specific order to satisfy Foreign Key constraints.
-
-### Creation Order
-1. `DEPT`
-2. `EMP`
-3. `PROJ`
-4. `ASSIGN`
-
-### Table Descriptions
-- `DEPT`
-
-  Stores department information, including department number, name, and location.
-
-- `EMP`
-
-  Stores employee details and references the DEPT table through the DEPTNO foreign key.
-
-- `PROJ`
-
-  Contains project codes and project descriptions.
-
-- `ASSIGN`
-
-  A junction table that links employees to projects and records the time spent on each project.
-
-## 3. Data Population
-Insert the sample data provided in the laboratory task to populate the database.
-
-### Sample Data Categories
-- `Departments`
-
-  Add department records with locations such as ATHENS and LONDON.
-
-- `Employees`
-
-  Insert employee records including staff such as CODD, ELMASRI, and NAVATHE.
-
-- `Projects`
-
-  Define projects such as PAYROLL and PERSONNEL.
-
-- `Assignments`
-
-  Link employees to projects with assigned time
-  (e.g., Employee 10 assigned to Project 100 for 40 hours).
-
-## 4. Verification
-Use the following SQL commands to verify that the database schema and data have been created successfully:
-```sql
-SELECT * FROM DEPT;
-SELECT * FROM EMP;
-SELECT * FROM PROJ;
-SELECT * FROM ASSIGN;
-```
-
----
-
-## Open the Documentation
-1. Navigate to the `docs/` directory
-2. Open the report corresponding to your preferred language:
-    - English: `Classification-Join-Tables.pdf`
-    - Greek: `Ταξινόμηση-Join-Συνδέσεις.pdf`
+| Department | Manager | Employee |
+| ---------- | ------- | -------- |
+| ACCOUNTING | ELMASRI | CODD     |
+| ACCOUNTING | ELMASRI | DATE     |
+| ACCOUNTING | ELMASRI | ELMASRI  |
+| SALES      | NAVATHE | NAVATHE  |
